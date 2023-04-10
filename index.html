@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <title>App Web Identificador de Sons</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+   
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  
+  <body>
+    <div class="col-xs-12 header_div text-center">
+      <h2>Alienígenas controlados por som</h2>     
+      <p>Observação: Reproduza diferentes sons, como: palmas, estalos e sinos, para fazer os alienígenas dançarem</p>     
+    </div>
+    <div class="main_div">
+      <center>
+      <br>
+      <button class="btn btn-warning" onclick="startClassification();"> INICIAR </button>
+      <h3 id="result_label">Posso ouvir - </h3>
+      <h4 id="result_confidence">Precisão - </h4>
+        <br>
+        <img src="aliens-01.png" id="alien1" width="300" height="300">
+        <img src="aliens-02.png" id="alien2" width="300" height="300">
+        <img src="aliens-03.png" id="alien3" width="300" height="300">
+        <img src="aliens-04.png" id="alien4" width="300" height="300">
+      </center>
+      </div>
+      <div class="copy_right_footer">
+        Desenvolvido por - Davi Masetto
+      </div>
+<script src="main.js"></script>
+  </body>
+</html>
+<!--<div>Teachable Machine Audio Model</div>
+<button type="button" onclick="init()">Start</button>
+<div id="label-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/speech-commands@0.4.0/dist/speech-commands.min.js"></script>
+
+<script type="text/javascript">
+    // more documentation available at
+    // https://github.com/tensorflow/tfjs-models/tree/master/speech-commands
+
+    // the link to your model provided by Teachable Machine export panel
+    const URL = "./my_model/";
+
+    async function createModel() {
+        const checkpointURL = URL + "model.json"; // model topology
+        const metadataURL = URL + "metadata.json"; // model metadata
+
+        const recognizer = speechCommands.create(
+            "BROWSER_FFT", // fourier transform type, not useful to change
+            undefined, // speech commands vocabulary feature, not useful for your models
+            checkpointURL,
+            metadataURL);
+
+        // check that model and metadata are loaded via HTTPS requests.
+        await recognizer.ensureModelLoaded();
+
+        return recognizer;
+    }
+
+    async function init() {
+        const recognizer = await createModel();
+        const classLabels = recognizer.wordLabels(); // get class labels
+        const labelContainer = document.getElementById("label-container");
+        for (let i = 0; i < classLabels.length; i++) {
+            labelContainer.appendChild(document.createElement("div"));
+        }
+
+        // listen() takes two arguments:
+        // 1. A callback function that is invoked anytime a word is recognized.
+        // 2. A configuration object with adjustable fields
+        recognizer.listen(result => {
+            const scores = result.scores; // probability of prediction for each class
+            // render the probability scores per class
+            for (let i = 0; i < classLabels.length; i++) {
+                const classPrediction = classLabels[i] + ": " + result.scores[i].toFixed(2);
+                labelContainer.childNodes[i].innerHTML = classPrediction;
+            }
+        }, {
+            includeSpectrogram: true, // in case listen should return result.spectrogram
+            probabilityThreshold: 0.75,
+            invokeCallbackOnNoiseAndUnknown: true,
+            overlapFactor: 0.50 // probably want between 0.5 and 0.75. More info in README
+        });
+
+        // Stop the recognition in 5 seconds.
+        // setTimeout(() => recognizer.stopListening(), 5000);
+    }
+</script>
+-->
+
+
+
+
+
+
+
+ 
+
